@@ -34,7 +34,7 @@ class WeatherRepoImpl(
 
                 // If data is stale, fetch new data using the city from stale data.
                 val cityName =
-                    localWeather.name // assuming you have a city field in your Weather entity
+                    localWeather.name
                 fetchAndSaveWeather(cityName)
                 return@withContext weatherDao.currentWeather.firstOrNull()
                 // If, for some reason, the stale data doesn't have city info, you can decide to return stale data or fetch based on location.
