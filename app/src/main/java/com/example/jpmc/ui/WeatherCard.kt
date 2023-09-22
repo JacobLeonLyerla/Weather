@@ -31,7 +31,7 @@ fun WeatherCard(weather: Weather, modifier: Modifier = Modifier) {
         sdf.format(Date(weather.timestamp))
     }
 
-    // This change was made after submission disregard it if that is an issue
+    // This change wasmade after submission disregard it if that is an issue
     // I just figured it was a simple fix that had no logic impact
     val trimmedDate = if (formattedDate.startsWith("0")) formattedDate.substring(1) else formattedDate
 

@@ -3,7 +3,6 @@ package com.example.jpmc.utils.di
 import android.app.Application
 import android.content.Context
 import android.location.Geocoder
-import com.example.jpmc.annotations.DefaultScope
 import com.example.jpmc.utils.loction.LocationTracker
 import com.example.jpmc.utils.loction.LocationTrackerImpl
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -13,7 +12,6 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import kotlinx.coroutines.CoroutineScope
 import javax.inject.Singleton
 
 @Module
