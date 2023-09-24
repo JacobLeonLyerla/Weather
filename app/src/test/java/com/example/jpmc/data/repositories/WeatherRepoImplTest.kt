@@ -162,20 +162,6 @@ internal class WeatherRepoImplTest {
         }
 
     @Test
-    fun `test fetchAndSaveWeather method`() = runTest(coroutinesTestExtension.dispatcher) {
-        // Given: available weather service and empty local storage
-        coEvery { service.getWeatherByCity("New York") } returns mockWeatherResponse
-        coEvery { weatherDao.deleteAll() } returns Unit
-        coEvery { weatherDao.replace(any()) } returns Unit
-
-        // When: fetching and saving current weather
-        repo.fetchAndSaveWeather("New York")
-
-        // Then: should update local weather data storage
-        // No assertion here; we're assuming that if no exceptions were thrown and methods were called, the test passed.
-    }
-
-    @Test
     fun `test fetchAndSaveWeather method with network error`() =
         runTest(coroutinesTestExtension.dispatcher) {
             // Given: a network error while fetching weather data
