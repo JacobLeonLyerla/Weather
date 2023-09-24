@@ -42,31 +42,6 @@ class WeatherCardTest {
         assertTextExists(dummyWeather, formattedDate)
     }
 
-    @Test
-    fun weatherCard_ShouldDisplayTextForRainyWeather() {
-        // Given
-        val dummyWeather = LocalWeather(
-            name = "New York",
-            temp = 75.0,
-            humidity = 40,
-            windSpeed = 5.0,
-            description = "Sunny",
-            icon = "sunny_icon"
-        ).apply {
-            timestamp = System.currentTimeMillis()
-        }
-        val sdf = SimpleDateFormat("hh:mm a", Locale.US)
-        val formattedDate = sdf.format(Date(dummyWeather.timestamp))
-
-        // When
-        composeTestRule.setContent {
-            WeatherCard(weather = dummyWeather)
-        }
-
-        // Then
-        assertTextExists(dummyWeather, formattedDate)
-    }
-
     // Helper function to assert text elements
     private fun assertTextExists(weather: LocalWeather, formattedDate: String) {
         composeTestRule.onNodeWithText("Location: ${weather.name}").assertExists()
